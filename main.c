@@ -7,17 +7,32 @@ of the users choice.
 ----------------------------------------------*/
 
 #include <stdio.h>
+#include <stdlib.h>
+
+int n = 10;
+unsigned long long first = 0;
+unsigned long long second = 1;
+int count = 0;
+
+int rFibonacci() {
+    if (count == 0) {
+        printf("\n%d", first);
+        printf("\n%d", second);
+    }
+    int fs = first + second;
+    printf("\n%d", fs);
+    first = second;
+    second = fs;
+    if (count != n) {
+        count++;
+        return 1;
+    }
+    else if (count == 10) {
+        exit(0);
+    }
+}
 
 int main() {
-    int nFib = 1000;
-    unsigned long long int a = 0;
-    unsigned long long int b = 1;
-    printf("%d", a);
-    printf("\n%d", b);
-    for (int i = 0; i < nFib; i++) {
-        unsigned long long int newFib = a + b;
-        printf("\n%d", newFib);
-        a = b;
-        b = newFib;
-    }
+    rFibonacci();
+    main();
 }
