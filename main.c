@@ -9,7 +9,7 @@ of the users choice.
 #include <stdio.h>
 #include <stdlib.h>
 
-int n = 10;
+int n = 44;
 unsigned long long first = 0;
 unsigned long long second = 1;
 int count = 0;
@@ -19,7 +19,7 @@ int rFibonacci() {
         printf("\n%d", first);
         printf("\n%d", second);
     }
-    int fs = first + second;
+    unsigned long long fs = first + second;
     printf("\n%d", fs);
     first = second;
     second = fs;
@@ -27,7 +27,7 @@ int rFibonacci() {
         count++;
         return 1;
     }
-    else if (count == 10) {
+    else if (count == n) {
         exit(0);
     }
 }
